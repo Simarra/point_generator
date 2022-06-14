@@ -36,7 +36,7 @@ movePoint e s (Point x y)=
 	    funcList = [mright, mleft, mdown, mup ];
    in subMovePoint (Point x y) funcList
   where
-    subMovePoint :: Point -> [(Point -> Point)] -> Maybe Point
+    subMovePoint :: Point -> [Point -> Point] -> Maybe Point
     subMovePoint (Point a b) (xf:xfs)
       | geoIntersect (xf (Point a b)) e = Just (xf (Point a b))
       | otherwise =
